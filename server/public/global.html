@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SHIPMENT LOG</title>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="SHIPMENT LOG" />
+    <meta name="description" content="SHIPMENT LOG" />
+    <link rel="icon" href="./favicon.png" />
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="styles/prettify-tomorrow.css"
+    />
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
+  </head>
+
+  <body>
+    <div id="main">
+      <h1 class="page-title">SHIPMENT LOG</h1>
+
+      <section>
+        <header>
+          <h2></h2>
+        </header>
+
+        <article>
+          <div class="container-overview">
+            <dl class="details"></dl>
+          </div>
+
+          <h3 class="subsection-title">Methods</h3>
+
+          <h4 class="name" id="addApproval">
+            <span class="type-signature">(async) </span>addApproval<span
+              class="signature"
+              >(ctx, shipmentId, approvalID, approvedBy)</span
+            ><span class="type-signature"></span>
+          </h4>
+
+          <div class="description">
+            <p>Add approval data</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>approvalID</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Approval Id</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>approvedBy</code></td>
+
+                <td class="type">
+                  <span class="param-type">string</span>
+                </td>
+
+                <td class="description last">
+                  <p>Name of approved official</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line192">line 192</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Nothing</p>
+          </div>
+
+          <h4 class="name" id="addClearance">
+            <span class="type-signature">(async) </span>addClearance<span
+              class="signature"
+              >(ctx, shipmentId, arrivalPortData, arrivalTimestamp,
+              clearanceID)</span
+            ><span class="type-signature"></span>
+          </h4>
+
+          <div class="description">
+            <p>Add shipment clearance details</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>arrivalPortData</code></td>
+
+                <td class="type">
+                  <span class="param-type">object</span>
+                </td>
+
+                <td class="description last">
+                  <p>Arrival Port Details</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>arrivalTimestamp</code></td>
+
+                <td class="type">
+                  <span class="param-type">object</span>
+                </td>
+
+                <td class="description last">
+                  <p>Arrival time details</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>clearanceID</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>clearance ID</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line264">line 264</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Nothing</p>
+          </div>
+
+          <h4 class="name" id="addReceipt">
+            <span class="type-signature">(async) </span>addReceipt<span
+              class="signature"
+              >(ctx, shipmentId, receiver)</span
+            ><span class="type-signature"></span>
+          </h4>
+
+          <div class="description">
+            <p>Add receipt</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>receiver</code></td>
+
+                <td class="type">
+                  <span class="param-type">object</span>
+                </td>
+
+                <td class="description last">
+                  <p>Receiver Data</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line303">line 303</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Nothing</p>
+          </div>
+
+          <h4 class="name" id="addVerification">
+            <span class="type-signature">(async) </span>addVerification<span
+              class="signature"
+              >(ctx, shipmentId, verificationID, portData)</span
+            ><span class="type-signature"></span>
+          </h4>
+
+          <div class="description">
+            <p>Add shipment verification details</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>verificationID</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Verification Id</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>portData</code></td>
+
+                <td class="type">
+                  <span class="param-type">object</span>
+                </td>
+
+                <td class="description last">
+                  <p>Port Details</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line233">line 233</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Nothing</p>
+          </div>
+
+          <h4 class="name" id="createPrivateAsset">
+            <span class="type-signature">(async) </span>createPrivateAsset<span
+              class="signature"
+              >(ctx, privateAssetId)</span
+            ><span class="type-signature"></span>
+          </h4>
+
+          <div class="description">
+            <p>Creates a private asset</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>privateAssetId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>PrivateAsset Id</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line31">line 31</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Nothing</p>
+          </div>
+
+          <h4 class="name" id="createShipment">
+            <span class="type-signature">(async) </span>createShipment<span
+              class="signature"
+              >(ctx, shipmentId, sender)</span
+            ><span class="type-signature"></span>
+          </h4>
+
+          <div class="description">
+            <p>Create Shipment data</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>sender</code></td>
+
+                <td class="type">
+                  <span class="param-type">object</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Data</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line100">line 100</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Nothing</p>
+          </div>
+
+          <h4 class="name" id="deleteShipment">
+            <span class="type-signature">(async) </span>deleteShipment<span
+              class="signature"
+              >(ctx, shipmentId)</span
+            ><span class="type-signature"></span>
+          </h4>
+
+          <div class="description">
+            <p>
+              Delete shipment data. This feature is not using in this version,
+              Hopefully available from version 2.x
+            </p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line173">line 173</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Nothing</p>
+          </div>
+
+          <h4 class="name" id="privateAssetExists">
+            <span class="type-signature">(async) </span>privateAssetExists<span
+              class="signature"
+              >(ctx, privateAssetId)</span
+            ><span class="type-signature"> &rarr; {boolean}</span>
+          </h4>
+
+          <div class="description">
+            <p>Check privateAsset exists or not</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>privateAssetId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Private Asset Id</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line15">line 15</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Exists or not</p>
+          </div>
+
+          <dl>
+            <dt>Type</dt>
+            <dd>
+              <span class="param-type">boolean</span>
+            </dd>
+          </dl>
+
+          <h4 class="name" id="readPrivateAsset">
+            <span class="type-signature">(async) </span>readPrivateAsset<span
+              class="signature"
+              >(ctx, privateAssetId)</span
+            ><span class="type-signature"> &rarr; {String}</span>
+          </h4>
+
+          <div class="description">
+            <p>Retrieve private asset</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>privateAssetId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Private Asset ID</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line64">line 64</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Private Data</p>
+          </div>
+
+          <dl>
+            <dt>Type</dt>
+            <dd>
+              <span class="param-type">String</span>
+            </dd>
+          </dl>
+
+          <h4 class="name" id="readShipment">
+            <span class="type-signature">(async) </span>readShipment<span
+              class="signature"
+              >(ctx, shipmentId)</span
+            ><span class="type-signature"> &rarr; {json}</span>
+          </h4>
+
+          <div class="description">
+            <p>Retrieve Shipment data</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line126">line 126</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Asset</p>
+          </div>
+
+          <dl>
+            <dt>Type</dt>
+            <dd>
+              <span class="param-type">json</span>
+            </dd>
+          </dl>
+
+          <h4 class="name" id="shipmentExists">
+            <span class="type-signature">(async) </span>shipmentExists<span
+              class="signature"
+              >(ctx, shipmentId)</span
+            ><span class="type-signature"> &rarr; {boolean}</span>
+          </h4>
+
+          <div class="description">
+            <p>Checks shipment id exist or not</p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line87">line 87</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>returns boolean</p>
+          </div>
+
+          <dl>
+            <dt>Type</dt>
+            <dd>
+              <span class="param-type">boolean</span>
+            </dd>
+          </dl>
+
+          <h4 class="name" id="updateShipment">
+            <span class="type-signature">(async) </span>updateShipment<span
+              class="signature"
+              >(ctx, shipmentId, newData)</span
+            ><span class="type-signature"></span>
+          </h4>
+
+          <div class="description">
+            <p>
+              Update shipment data with new data. This feature is not using in
+              this version, Hopefully available from version 2.x
+            </p>
+          </div>
+
+          <h5>Parameters:</h5>
+
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="name"><code>ctx</code></td>
+
+                <td class="type">
+                  <span class="param-type">context</span>
+                </td>
+
+                <td class="description last">
+                  <p>Contract Context</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>shipmentId</code></td>
+
+                <td class="type">
+                  <span class="param-type">number</span>
+                </td>
+
+                <td class="description last">
+                  <p>Shipment Id</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="name"><code>newData</code></td>
+
+                <td class="type">
+                  <span class="param-type">object</span>
+                </td>
+
+                <td class="description last">
+                  <p>Updated data of shipment</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <dl class="details">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source">
+              <ul class="dummy">
+                <li>
+                  <a href="shipment-contract.js.html">shipment-contract.js</a>,
+                  <a href="shipment-contract.js.html#line144">line 144</a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+          <h5>Returns:</h5>
+
+          <div class="param-desc">
+            <p>Nothing</p>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <nav>
+      <h2><a href="index.html">SHIPMENT LOG</a></h2>
+      <h3>Methods</h3>
+      <ul>
+        <li><a href="global.html#addApproval">addApproval</a></li>
+        <li><a href="global.html#addClearance">addClearance</a></li>
+        <li><a href="global.html#addReceipt">addReceipt</a></li>
+        <li><a href="global.html#addVerification">addVerification</a></li>
+        <li><a href="global.html#createPrivateAsset">createPrivateAsset</a></li>
+        <li><a href="global.html#createShipment">createShipment</a></li>
+        <li><a href="global.html#deleteShipment">deleteShipment</a></li>
+        <li><a href="global.html#privateAssetExists">privateAssetExists</a></li>
+        <li><a href="global.html#readPrivateAsset">readPrivateAsset</a></li>
+        <li><a href="global.html#readShipment">readShipment</a></li>
+        <li><a href="global.html#shipmentExists">shipmentExists</a></li>
+        <li><a href="global.html#updateShipment">updateShipment</a></li>
+      </ul>
+    </nav>
+
+    <br class="clear" />
+
+    <footer>
+      Documentation generated by
+      <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a>
+    </footer>
+
+    <script>
+      prettyPrint();
+    </script>
+    <script src="scripts/linenumber.js"></script>
+  </body>
+</html>
