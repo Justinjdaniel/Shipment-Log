@@ -1,0 +1,44 @@
+[
+    {
+        "transactionName": "shipmentExists",
+        "transactionLabel": "A test shipmentExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "createShipment",
+        "transactionLabel": "A test createShipment transaction",
+        "arguments": [
+            "001",
+            "some value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "readShipment",
+        "transactionLabel": "A test readShipment transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "updateShipment",
+        "transactionLabel": "A test updateShipment transaction",
+        "arguments": [
+            "001",
+            "some other value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "deleteShipment",
+        "transactionLabel": "A test deleteShipment transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    }
+]
