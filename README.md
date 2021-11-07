@@ -6,6 +6,8 @@
 <img src="https://img.shields.io/apm/l/atomic-design-ui.svg" alt="Logo" title="MIT License"/></a>
 </h1>
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Justinjdaniel/Shipment-Log)
+
 **SHIPMENT LOG** is a platform for Blockchain integration in freight shipping infrastructure. This helps in 
   - Improving the security and traceability of shipments.
   - Can easily implement policies and contracts into the system.
