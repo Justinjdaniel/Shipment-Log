@@ -1,0 +1,240 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+- name: Deploy Blockchain Integration In Freight Shipping Infrastructure
+  hosts: localhost
+  vars:
+    #
+    # For information on these configuration options, read the documentation:
+    # https://github.com/IBM-Blockchain/ansible-role-blockchain-platform-manager#example-playbook
+    #
+    infrastructure:
+      type: docker
+      docker:
+        network: shipping
+
+    organizations:
+      - &Shipper
+        msp:
+          id: 'ShipperMSP'
+          admin:
+            identity: 'senderAdmin'
+            secret: 'senderAdminpw'
+          ibp:
+            display_name: 'Shipper MSP'
+        ca: &ShipperCA
+          id: 'ShipperCA'
+          admin_identity: 'admin'
+          admin_secret: 'adminpw'
+          tls:
+            enabled: false
+          docker:
+            name: ca.shipper.shipping.com
+            hostname: ca.shipper.shipping.com
+            port: 18050
+          ibp:
+            display_name: 'Shipper CA'
+
+        peers:
+          - &ShipperPeer1
+            id: 'ShipperPeer1'
+            identity: 'senderPeer1'
+            secret: 'senderPeer1'
+            database_type: leveldb
+            tls:
+              enabled: false
+              identity: 'senderpeer1tls'
+              secret: 'senderpeer1tlspw'
+            docker:
+              name: peer0.shipper.shipping.com
+              hostname: peer0.shipper.shipping.com
+              port: 18051
+              chaincode_port: 18052
+              operations_port: 18053
+            ibp:
+              display_name: 'Shipper Peer1'
+
+        nodes: '{{ playbook_dir }}/nodes/Shipper'
+        wallet: '{{ playbook_dir }}/wallets/Shipper'
+        gateways: '{{ playbook_dir }}/gateways/Shipper'
+
+      # ========================================================
+
+      - &Auth1
+        msp:
+          id: 'Auth1MSP'
+          admin:
+            identity: 'Auth1Admin'
+            secret: 'Auth1Adminpw'
+          ibp:
+            display_name: 'Auth1 MSP'
+        ca: &Auth1CA
+          id: 'Auth1CA'
+          admin_identity: 'admin'
+          admin_secret: 'adminpw'
+          tls:
+            enabled: false
+          docker:
+            name: ca.Auth1.shipping.com
+            hostname: ca.Auth1.shipping.com
+            port: 21050
+          ibp:
+            display_name: 'Auth1 CA'
+
+        peers:
+          - &Auth1Peer1
+            id: 'Auth1Peer1'
+            identity: 'Auth1Peer1'
+            secret: 'Auth1Peer1'
+            database_type: leveldb
+            tls:
+              enabled: false
+              identity: 'Auth1peer1tls'
+              secret: 'Auth1peer1tlspw'
+            docker:
+              name: peer0.Auth1.shipping.com
+              hostname: peer0.Auth1.shipping.com
+              port: 21051
+              chaincode_port: 21052
+              operations_port: 21053
+            ibp:
+              display_name: 'Auth1 Peer1'
+
+        nodes: '{{ playbook_dir }}/nodes/Auth1'
+        wallet: '{{ playbook_dir }}/wallets/Auth1'
+        gateways: '{{ playbook_dir }}/gateways/Auth1'
+
+      # ========================================================
+
+      - &Auth2
+        msp:
+          id: 'Auth2MSP'
+          admin:
+            identity: 'auth2Admin'
+            secret: 'auth2Adminpw'
+          ibp:
+            display_name: 'Auth2 MSP'
+        ca: &Auth2CA
+          id: 'Auth2CA'
+          admin_identity: 'admin'
+          admin_secret: 'adminpw'
+          tls:
+            enabled: false
+          docker:
+            name: ca.auth2.shipping.com
+            hostname: ca.auth2.shipping.com
+            port: 22050
+          ibp:
+            display_name: 'Auth2 CA'
+
+        peers:
+          - &Auth2Peer1
+            id: 'Auth2Peer1'
+            identity: 'auth2Peer1'
+            secret: 'auth2Peer1'
+            database_type: leveldb
+            tls:
+              enabled: false
+              identity: 'auth2peer1tls'
+              secret: 'auth2peer1tlspw'
+            docker:
+              name: peer0.auth2.shipping.com
+              hostname: peer0.auth2.shipping.com
+              port: 22051
+              chaincode_port: 22052
+              operations_port: 22053
+            ibp:
+              display_name: 'Auth2 Peer1'
+
+        nodes: '{{ playbook_dir }}/nodes/Auth2'
+        wallet: '{{ playbook_dir }}/wallets/Auth2'
+        gateways: '{{ playbook_dir }}/gateways/Auth2'
+
+      # ========================================================
+
+      - &OrdererOrg
+        msp:
+          id: 'OrdererMSP'
+          admin:
+            identity: 'ordererAdmin'
+            secret: 'ordererAdminpw'
+          ibp:
+            display_name: 'Orderer MSP'
+        ca: &OrdererCA
+          id: 'OrdererCA'
+          admin_identity: 'admin'
+          admin_secret: 'adminpw'
+          tls:
+            enabled: false
+          docker:
+            name: ca.orderer.shipping.com
+            hostname: ca.orderer.shipping.com
+            port: 17050
+          ibp:
+            display_name: 'Orderer CA'
+        orderer: &Orderer
+          id: 'Orderer1'
+          identity: 'orderer1'
+          secret: 'orderer1pw'
+          tls:
+            enabled: false
+            identity: 'orderer1tls'
+            secret: 'orderer1tlspw'
+          consortium:
+            members:
+              - *Shipper
+              - *Auth1
+              - *Auth2
+          docker:
+            name: orderer.shipping.com
+            hostname: orderer.shipping.com
+            port: 17051
+            operations_port: 17052
+          ibp:
+            display_name: 'Orderer1'
+            cluster_name: 'OrdererCluster'
+        nodes: '{{ playbook_dir }}/nodes/Orderer'
+        wallet: '{{ playbook_dir }}/wallets/Orderer'
+        gateways: '{{ playbook_dir }}/gateways/Orderer'
+
+    channels:
+      - &Shipping
+        name: shipping
+        orderer: *Orderer
+        members:
+          - <<: *Shipper
+            committing_peers:
+              - *ShipperPeer1
+            anchor_peers:
+              - *ShipperPeer1
+          - <<: *Auth1
+            committing_peers:
+              - *Auth1Peer1
+            anchor_peers:
+              - *Auth1Peer1
+          - <<: *Auth2
+            committing_peers:
+              - *Auth2Peer1
+            anchor_peers:
+              - *Auth2Peer1
+
+    gateways:
+      - name: Shipper gateway
+        organization:
+          <<: *Shipper
+          gateway_peers:
+            - <<: *ShipperPeer1
+      - name: Auth1 gateway
+        organization:
+          <<: *Auth1
+          gateway_peers:
+            - <<: *Auth1Peer1
+      - name: Auth2 gateway
+        organization:
+          <<: *Auth2
+          gateway_peers:
+            - <<: *Auth2Peer1
+
+  roles:
+    - ibm.blockchain_platform_manager
