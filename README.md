@@ -2,11 +2,12 @@
 
 <h1>
 <img src="client/public/favicon.png" alt="Logo" title="Shipment Log"/>
-<strong>SHIPMENT LOG</strong><a href='https://gitlab.com/Justinjdaniel/chfvb601_-shipping/blob/c78d67d92536e2722e2ce5332d4636f6df3fb46d/LICENSE' target='_blank'>
-<img src="https://img.shields.io/apm/l/atomic-design-ui.svg" alt="Logo" title="MIT License"/></a>
+<strong>SHIPMENT LOG</strong>
 </h1>
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Justinjdaniel/Shipment-Log)
+<a href='/LICENSE' target='_blank'>
+<img src="https://img.shields.io/apm/l/atomic-design-ui.svg" alt="Logo" title="MIT License"/></a>
 
 **SHIPMENT LOG** is a platform for Blockchain integration in freight shipping infrastructure. This helps in 
   - Improving the security and traceability of shipments.
