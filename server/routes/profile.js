@@ -1,15 +1,15 @@
 const profile = {
   shipper: {
-    Wallet: `/Users/justinjdaniel/Documents/Workspace/KBA/Projects/chfvb601_shipping/network/wallets/Shipper`,
-    CCP: `/Users/justinjdaniel/Documents/Workspace/KBA/Projects/chfvb601_shipping/network/gateways/Shipper/Shipper gateway.json`,
+    Wallet: `<path>/network/wallets/Shipper`,
+    CCP: `<path>/network/gateways/Shipper/Shipper gateway.json`,
   },
   auth1: {
-    Wallet: `/Users/justinjdaniel/Documents/Workspace/KBA/Projects/chfvb601_shipping/network/wallets/Auth1`,
-    CCP: `/Users/justinjdaniel/Documents/Workspace/KBA/Projects/chfvb601_shipping/network/gateways/Auth1/Auth1 gateway.json`,
+    Wallet: `<path>/network/wallets/Auth1`,
+    CCP: `<path>/network/gateways/Auth1/Auth1 gateway.json`,
   },
   auth2: {
-    Wallet: `/Users/justinjdaniel/Documents/Workspace/KBA/Projects/chfvb601_shipping/network/wallets/Auth2`,
-    CCP: `/Users/justinjdaniel/Documents/Workspace/KBA/Projects/chfvb601_shipping/network/gateways/Auth2/Auth2 gateway.json`,
+    Wallet: `<path>/network/wallets/Auth2`,
+    CCP: `<path>/network/gateways/Auth2/Auth2 gateway.json`,
   },
 };
 
