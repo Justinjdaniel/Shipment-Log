@@ -39,11 +39,6 @@ describe('ShipmentContract', () => {
     beforeEach(() => {
         contract = new ShipmentContract();
         ctx = new TestContext();
-        // ctx.clientIdentity = {
-        //     getMSPID: () => {
-        //         return 'CustomsMSP'
-        //     },
-        // };
         ctx.stub.getState
             .withArgs('1001')
             .resolves(
@@ -95,9 +90,11 @@ describe('ShipmentContract', () => {
         it('should return a Shipment', async () => {
             await contract
                 .readShipment(ctx, '1001')
-                .should.eventually.deep.equal({sender:{
-                    sender: 'Shipment 1001 data',
-                    shipmentTimestamp: '1624197368215',}
+                .should.eventually.deep.equal({
+                    sender: {
+                        sender: 'Shipment 1001 data',
+                        shipmentTimestamp: '1624197368215',
+                    },
                 });
         });
 

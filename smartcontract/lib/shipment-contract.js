@@ -8,10 +8,7 @@ const { Contract } = require('fabric-contract-api');
 const privateDataCollection = 'PrivateData';
 
 class ShipmentContract extends Contract {
-    // ========================================================================== //
-    //                      Private Data Transactions
-    // ========================================================================== //
-
+    // * Private Data Transactions
     /**
      * Check privateAsset exists or not
      * @async
@@ -186,9 +183,9 @@ class ShipmentContract extends Contract {
         await ctx.stub.deleteState(shipmentId);
     }
 
-    // ========================================================================== //
-    //                                    Customs
-    // ========================================================================== //
+
+    // * Customs
+
     /**
      * Add approval data
      * @async
@@ -200,10 +197,6 @@ class ShipmentContract extends Contract {
      * @returns Nothing
      */
     async addApproval(ctx, shipmentId, approvalID, approvedBy) {
-        // const CID = new shim.ClientIdentity(ctx.stub);
-        // const mspID = CID.getMSPID();
-        // logger.info(`MSPID : ${mspID}`);
-        // if (mspID == 'CustomsMSP') {
         const exists = await this.shipmentExists(ctx, shipmentId);
         if (!exists) {
             throw new Error(`The shipment ${shipmentId} does not exist`);
@@ -218,18 +211,9 @@ class ShipmentContract extends Contract {
         };
         const buffer = Buffer.from(JSON.stringify(asset));
         await ctx.stub.putState(shipmentId, buffer);
-        // } else {
-        //     logger.info(
-        //         `Users under the following MSP : ${mspID} cannot perform this action`
-        //     );
-        //     return `Users under the following MSP : ${mspID} cannot perform this action`;
-        // }
     }
 
-    // ========================================================================== //
-    //                                  Dispatch-Port
-    // ========================================================================== //
-
+    // * Dispatch-Port
     /**
      * Add shipment verification details
      * @async
@@ -257,10 +241,7 @@ class ShipmentContract extends Contract {
         await ctx.stub.putState(shipmentId, buffer);
     }
 
-    // ========================================================================== //
-    //                                  Arrival-Port
-    // ========================================================================== //
-
+    // * Arrival-Port
     /**
      * Add shipment clearance details
      * @async
@@ -296,10 +277,7 @@ class ShipmentContract extends Contract {
         await ctx.stub.putState(shipmentId, buffer);
     }
 
-    // ========================================================================== //
-    //                                  Receiver
-    // ========================================================================== //
-
+    // * Receiver
     /**
      * Add receipt
      * @async
