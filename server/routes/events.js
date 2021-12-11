@@ -1,6 +1,7 @@
 const { profile } = require('./profile');
 const { FileSystemWallet, Gateway } = require('fabric-network');
 const util = require('util');
+const logger = require('../utils/logger');
 
 class EventListner {
   setRoleAndIdentity(role, identityLabel) {
@@ -25,9 +26,9 @@ class EventListner {
     let channel = await this.gateway.getNetwork(this.channel);
     await channel.addBlockListener(eventListnerName, (err, block) => {
       if (err) {
-        console.log(err);
+        logger.error(err);
       }
-      console.log(util.inspect(block));
+      logger.info(util.inspect(block));
     });
   }
 }

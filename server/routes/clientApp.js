@@ -1,5 +1,6 @@
 const { profile } = require('./profile');
 const { FileSystemWallet, Gateway } = require('fabric-network');
+const logger = require('../utils/logger');
 
 class clientApplication {
   setRoleAndIdentity(role, identityLabel) {
@@ -24,7 +25,6 @@ class clientApplication {
     try {
       //connects to the fabric network using the connectionOptions and connection profile
       await gateway.connect(this.Profile['CCP'], this.connectionOptions);
-      // console.log(gateway)
       //connects to the network
       let channel = await gateway.getNetwork(this.channel);
       //gets the contract based on the name
@@ -33,12 +33,12 @@ class clientApplication {
       let result = await contract.submitTransaction(txnName, ...args);
       return result;
     } catch (error) {
-      console.log(`Error processing transaction. ${error}`);
+      logger.error(`Error processing transaction. ${error}`);
       // console.log(error.stack);
       throw error.endorsements[0];
     } finally {
       // Disconnect from the gateway
-      console.log('Disconnect from Fabric gateway.');
+      logger.info('Disconnect from Fabric gateway.');
       gateway.disconnect();
     }
   }
@@ -62,12 +62,12 @@ class clientApplication {
         .submit(id);
       return result;
     } catch (error) {
-      console.log(`Error processing transaction. ${error}`);
+      logger.error(`Error processing transaction. ${error}`);
       // console.log(error.stack);
       throw error.endorsements[0];
     } finally {
       // Disconnect from the gateway
-      console.log('Disconnect from Fabric gateway.');
+      logger.info('Disconnect from Fabric gateway.');
       gateway.disconnect();
     }
   }
