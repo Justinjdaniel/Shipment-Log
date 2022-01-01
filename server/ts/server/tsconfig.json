@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
     "paths": {
       "@shared/*": [
         "src/shared/*"
@@ -24,6 +25,6 @@
     "spec/**/*.ts"
   ],
   "exclude": [
-    "src/public/"
+    "public"
   ]
 }
