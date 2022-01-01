@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "client"
+    },
+    {
+      "path": "network"
+    },
+    {
+      "path": "server"
+    }
+  ],
+  "settings": {
+    "window.zoomLevel": 1,
+    "files.autoSave": "afterDelay"
+  }
+}
