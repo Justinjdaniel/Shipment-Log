@@ -1,9 +1,9 @@
-const { profile } = require('./profile');
-const { FileSystemWallet, Gateway } = require('fabric-network');
-const util = require('util');
-const logger = require('../utils/logger');
+import { profile } from './profile';
+import { FileSystemWallet, Gateway } from 'fabric-network';
+import { inspect } from 'util';
+import { error, info } from '../utils/console.min';
 
-class EventListner {
+class EventListener {
   setRoleAndIdentity(role, identityLabel) {
     this.Profile = profile[role.toLowerCase()];
     let wallet = new FileSystemWallet(this.Profile['Wallet']);
@@ -26,13 +26,13 @@ class EventListner {
     let channel = await this.gateway.getNetwork(this.channel);
     await channel.addBlockListener(eventListnerName, (err, block) => {
       if (err) {
-        logger.error(err);
+        error(err);
       }
-      logger.info(util.inspect(block));
+      info(inspect(block));
     });
   }
 }
 
-module.exports = {
-  EventListner,
+export default {
+  EventListener: EventListner,
 };
