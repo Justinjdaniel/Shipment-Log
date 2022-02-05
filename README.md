@@ -137,7 +137,7 @@ Shipment-Log/
 Clone the project
 
 ```bash
-  git clone https://gitlab.com/Justinjdaniel/chfvb601_-shipping.git
+  git clone https://github.com/Justinjdaniel/Shipment-Log/tree/Fabric-v2.0
 ```
 
 Setup Network
