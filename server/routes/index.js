@@ -1,6 +1,26 @@
 const router = require('express').Router();
 import { clientApplication } from './clientApp';
-import { EventListner } from './events';
+import { EventListener } from './events';
+
+/**
+ * Returns the message in accordance with the transaction for Role: Shipper and Identity: Admin in Channel: shipping and chaincode: smartcontract
+ *
+ * @param   {[string]}  txnName  [Transaction Name]
+ * @param   {[object]}  args     [Passing arguments]
+ *
+ * @return  {[object]} message   [response message form blockchain]
+ */
+async function responseFromShipper(txnName, ...args) {
+  try {
+    let client = new clientApplication();
+    client.setRoleAndIdentity('shipper', 'admin');
+    client.initChannelAndChaincode('shipping', 'smartcontract');
+    let message = await client.generatedAndSubmitTxn(txnName, ...args);
+    return message;
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
 
 /**
  * Create shipment
@@ -21,16 +41,11 @@ router.post('/create', async (req, res) => {
     } = req.body;
     const data = `${name}+^${contactNo}+^${content}+^${contactAddress}+^${deliveryNo}+^${deliveryAddress}`;
 
-    let client = new clientApplication();
-    client.setRoleAndIdentity('shipper', 'admin');
-    client.initChannelAndChaincode('shipping', 'smartcontract');
-
-    let message = await client.generatedAndSubmitTxn(
+    let response = await responseFromShipper(
       'createShipment',
       shipmentId,
       data
-    );
-    const response = message.toString();
+    ).toString();
     res.status(200).send(response);
   } catch (err) {
     res.status(500).send(err.message);
@@ -46,15 +61,10 @@ router.post('/create', async (req, res) => {
 router.get('/read', async (req, res) => {
   try {
     const shipmentId = req.query.shipmentId;
-    let client = new clientApplication();
-    client.setRoleAndIdentity('shipper', 'admin');
-    client.initChannelAndChaincode('shipping', 'smartcontract');
-
-    let message = await client.generatedAndSubmitTxn(
+    let response = await responseFromShipper(
       'readShipment',
       shipmentId
-    );
-    const response = message.toString();
+    ).toString();
     res.status(200).send(response);
   } catch (err) {
     res.status(404).send(err.message);
@@ -70,15 +80,11 @@ router.get('/read', async (req, res) => {
 router.post('/update', async (req, res) => {
   try {
     const { shipmentId, ...newData } = req.body;
-    client.setRoleAndIdentity('shipper', 'admin');
-    client.initChannelAndChaincode('shipping', 'smartcontract');
-    let message = await client.generatedAndSubmitTxn(
+    let response = await responseFromShipper(
       'updateShipment',
       shipmentId,
       newData
-    );
-
-    const response = message.toString();
+    ).toString();
     res.status(200).send(response);
   } catch (err) {
     res.status(500).send(err.message);
@@ -94,18 +100,12 @@ router.post('/update', async (req, res) => {
 router.post('/approval', async (req, res) => {
   try {
     const { shipmentId, approvalID, approvedBy } = req.body;
-
-    let client = new clientApplication();
-    client.setRoleAndIdentity('shipper', 'admin');
-    client.initChannelAndChaincode('shipping', 'smartcontract');
-    let message = await client.generatedAndSubmitTxn(
+    let response = await responseFromShipper(
       'addApproval',
       shipmentId,
       approvalID,
       approvedBy
-    );
-
-    const response = message.toString();
+    ).toString();
     res.status(200).send(response);
   } catch (err) {
     res.status(500).send(err.message);
@@ -121,17 +121,12 @@ router.post('/approval', async (req, res) => {
 router.post('/verification', async (req, res) => {
   try {
     const { shipmentId, verificationID, portData } = req.body;
-    let client = new clientApplication();
-    client.setRoleAndIdentity('shipper', 'admin');
-    client.initChannelAndChaincode('shipping', 'smartcontract');
-    let message = await client.generatedAndSubmitTxn(
+    let response = await responseFromShipper(
       'addVerification',
       shipmentId,
       verificationID,
       portData
-    );
-
-    const response = message.toString();
+    ).toString();
     res.status(200).send(response);
   } catch (err) {
     res.status(500).send(err.message);
@@ -148,18 +143,13 @@ router.post('/clearance', async (req, res) => {
   try {
     const { shipmentId, arrivalPortData, arrivalTimestamp, clearanceID } =
       req.body;
-    let client = new clientApplication();
-    client.setRoleAndIdentity('shipper', 'admin');
-    client.initChannelAndChaincode('shipping', 'smartcontract');
-    let message = await client.generatedAndSubmitTxn(
+    let response = await responseFromShipper(
       'addClearance',
       shipmentId,
       arrivalPortData,
       arrivalTimestamp,
       clearanceID
-    );
-
-    const response = message.toString();
+    ).toString();
     res.status(200).send(response);
   } catch (err) {
     res.status(500).send(err.message);
@@ -176,16 +166,11 @@ router.post('/receipt', async (req, res) => {
   try {
     const { shipmentId, name, contactNo, contactAddress } = req.body;
     const receiver = `${name}+^${contactNo}+^${contactAddress}`;
-    let client = new clientApplication();
-    client.setRoleAndIdentity('shipper', 'admin');
-    client.initChannelAndChaincode('shipping', 'smartcontract');
-    let message = await client.generatedAndSubmitTxn(
+    let response = await responseFromShipper(
       'addReceipt',
       shipmentId,
       receiver
-    );
-
-    const response = message.toString();
+    ).toString();
     res.status(200).send(response);
   } catch (err) {
     res.status(500).send(err.message);
@@ -245,9 +230,9 @@ router.get('/privateCall', async (req, res) => {
 });
 
 // Block Event
-let BlockCreation = new EventListner();
+let BlockCreation = new EventListener();
 BlockCreation.setRoleAndIdentity('shipper', 'admin');
 BlockCreation.initChannelAndChaincode('shipping', 'smartcontract');
-BlockCreation.blockEventListner('blockEvent');
+BlockCreation.blockEventListener('blockEvent');
 
 export default router;

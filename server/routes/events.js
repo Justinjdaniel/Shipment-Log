@@ -21,10 +21,10 @@ class EventListener {
     this.contractName = contractName;
     this.gateway = new Gateway();
   }
-  async blockEventListner(eventListnerName) {
+  async blockEventListener(eventListenerName) {
     await this.gateway.connect(this.Profile['CCP'], this.connectionOptions);
     let channel = await this.gateway.getNetwork(this.channel);
-    await channel.addBlockListener(eventListnerName, (err, block) => {
+    await channel.addBlockListener(eventListenerName, (err, block) => {
       if (err) {
         error(err);
       }
@@ -34,5 +34,5 @@ class EventListener {
 }
 
 export default {
-  EventListener: EventListner,
+  EventListener,
 };
