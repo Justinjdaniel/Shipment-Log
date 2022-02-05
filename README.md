@@ -199,4 +199,4 @@ Detailed Documentations in
 
 ## License
 
-[MIT](https://github.com/Justinjdaniel/Shipment-Log/blob/Fabric-v2.0/LICENSE)
+[MIT](/LICENSE)
