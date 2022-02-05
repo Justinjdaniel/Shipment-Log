@@ -49,8 +49,8 @@ Shipment-Log/
 ├── client/(front-end data)
 ├── network/
 │   ├── README.md
-│   ├── requirements.yml
-│   └── shipping.yml
+│   ├── shipping_minifab.yml
+│   └── shipping_microfab.yml
 ├── server/
 │   ├── lib/www
 │   ├── public/(docs)
@@ -59,6 +59,8 @@ Shipment-Log/
 │   |   ├── events.js
 │   |   ├── index.js
 │   |   └── profile.js
+│   ├── utils/
+│   |   └── console.min.js
 │   ├── app.js
 │   ├── package-lock.json
 │   └── package.json
@@ -119,15 +121,14 @@ Shipment-Log/
 
 #### **Prerequisite**
 
-- Ansible v.2.8+
 - Docker v.19.03x+
 - Docker Compose
-- Hyperledger Fabric Binaries And Docker Images v.1.4.7
-- Golang v.1.13.3
-- Node Js v.10.x
-- npm v.6.x
-- Visual Studio Code v.1.39
-- IBM Blockchain Extension v.1.4
+- Hyperledger Fabric Binaries And Docker Images
+- Golang v.1.13.x+
+- Node Js v.10.x+
+- npm v.6.x+
+- Visual Studio Code v.1.40+
+- IBM Blockchain Extension v.2.x+
 - Sponge
 - jq
 
@@ -171,13 +172,11 @@ Detailed Documentations in
 
 ### Used Environment
 
-  - Machine : MacBook Pro M1
-  - OS :  macOS Big Sur
-  - Platforms :  x86-64, ARM64
+  - OS :  Windows 11
 
 ### Testing Tool
 
-- Visual Studio Code v.1.39
+- Visual Studio Code
 - Mocha Test Explorer
 
 ![Test](https://user-images.githubusercontent.com/62233773/140636863-a6bd395d-bcc3-490d-a9ce-8a8d096481b3.png)
