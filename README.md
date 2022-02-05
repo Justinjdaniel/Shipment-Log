@@ -170,10 +170,6 @@ Detailed Documentations in
 
 ## Running Tests
 
-### Used Environment
-
-  - OS :  Windows 11
-
 ### Testing Tool
 
 - Visual Studio Code
