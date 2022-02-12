@@ -1,18 +1,19 @@
 {
   "name": "server",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
   },
-  "author": "Justin John Daniel",
+  "author": "Justin J Daniel",
   "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "fabric-network": "^1.4.4",
+    "fabric-ca-client": "^2.2.2",
+    "fabric-network": "^2.2.2",
     "morgan": "~1.9.1"
   },
   "devDependencies": {

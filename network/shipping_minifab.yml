@@ -1,0 +1,32 @@
+# Documentation reference : https://github.com/hyperledger-labs/minifabric/blob/main/docs/README.md
+
+fabric:
+  # Declaring unique addresses of the Certificate Authorities of all organizations.
+  cas:  
+  - "ca1.shipper.shipping.com"
+  - "ca1.auth1.shipping.com"
+  - "ca1.auth2.shipping.com"
+
+  # Declaring unique addresses of the peers of organizations. 
+  # There can be multiple peers for each organizations
+  peers: 
+  - "peer1.shipper.shipping.com"
+  # - "peer2.shipper.shipping.com"
+  - "peer1.auth1.shipping.com"
+  # - "peer2.auth1.shipping.com"
+  - "peer1.auth2.shipping.com"
+  # - "peer2.auth2.shipping.com"
+
+  # Declaring unique addresses of the orderers.
+  orderers:
+  - "orderer1.shipping.com"
+  - "orderer2.shipping.com"
+  - "orderer3.shipping.com"
+
+  settings:
+    ca:
+      FABRIC_LOGGING_SPEC: DEBUG
+    peer:
+      FABRIC_LOGGING_SPEC: DEBUG
+    orderer:
+      FABRIC_LOGGING_SPEC: DEBUG
