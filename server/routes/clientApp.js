@@ -1,6 +1,6 @@
-import { profile } from './profile';
-import { FileSystemWallet, Gateway } from 'fabric-network';
-import { error as _error, info } from '../utils/console.min';
+const { profile } = require('./profile');
+const { FileSystemWallet, Gateway } = require('fabric-network');
+const logger = require('../utils/logger');
 
 class clientApplication {
   setRoleAndIdentity(role, identityLabel) {
@@ -33,12 +33,12 @@ class clientApplication {
       let result = await contract.submitTransaction(txnName, ...args);
       return result;
     } catch (error) {
-      _error(`Error processing transaction. ${error}`);
+      logger.error(`Error processing transaction. ${error}`);
       // console.log(error.stack);
       throw error.endorsements[0];
     } finally {
       // Disconnect from the gateway
-      info('Disconnect from Fabric gateway.');
+      logger.info('Disconnect from Fabric gateway.');
       gateway.disconnect();
     }
   }
@@ -62,17 +62,17 @@ class clientApplication {
         .submit(id);
       return result;
     } catch (error) {
-      _error(`Error processing transaction. ${error}`);
+      logger.error(`Error processing transaction. ${error}`);
       // console.log(error.stack);
       throw error.endorsements[0];
     } finally {
       // Disconnect from the gateway
-      info('Disconnect from Fabric gateway.');
+      logger.info('Disconnect from Fabric gateway.');
       gateway.disconnect();
     }
   }
 }
 
-export default {
+module.exports = {
   clientApplication,
 };
