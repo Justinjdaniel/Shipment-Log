@@ -5,7 +5,7 @@
 <strong>SHIPMENT LOG</strong>
 </h1>
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Justinjdaniel/Shipment-Log)
+[![Open in Visual Studio Code](https://img.shields.io/badge/Open%20in%20Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=flat)](https://open.vscode.dev/Justinjdaniel/Shipment-Log)
 <a href='/LICENSE' target='_blank'>
 <img src="https://img.shields.io/apm/l/atomic-design-ui.svg" alt="Logo" title="MIT License"/></a>
 
@@ -121,14 +121,10 @@ Shipment-Log/
 
 #### **Prerequisite**
 
-- Docker v.19.03x+
-- Docker Compose
+- Docker Desktop
 - Hyperledger Fabric Binaries And Docker Images
-- Golang v.1.13.x+
-- Node Js v.10.x+
-- npm v.6.x+
-- Visual Studio Code v.1.40+
-- IBM Blockchain Extension v.2.x+
+- Node Js v.16+
+- IBM Blockchain Extension
 - Sponge
 - jq
 
