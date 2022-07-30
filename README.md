@@ -1,7 +1,7 @@
 <img align="center" src="https://user-images.githubusercontent.com/62233773/140636854-be8839c6-0fdb-4955-af45-01ec21556d25.png" alt="Logo" title="Shipment Log"/>
 
 <h1>
-<img src="client/public/favicon.png" alt="Logo" title="Shipment Log"/>
+<!-- <img src="/client/public/favicon.png" alt="Logo" title="Shipment Log"/> -->
 <strong>SHIPMENT LOG</strong>
 </h1>
 
