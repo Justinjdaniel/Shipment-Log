@@ -1,7 +1,7 @@
 <img align="center" src="https://user-images.githubusercontent.com/62233773/140636854-be8839c6-0fdb-4955-af45-01ec21556d25.png" alt="Logo" title="Shipment Log"/>
 
 <h1>
-<!-- <img src="/client/public/favicon.png" alt="Logo" title="Shipment Log"/> -->
+<img src="https://github.com/Justinjdaniel/Shipment-Log/blob/Fabric-v2.0/client/public/favicon.png" alt="Logo" title="Shipment Log"/>
 <strong>SHIPMENT LOG</strong>
 </h1>
 
@@ -119,10 +119,14 @@ Shipment-Log/
 
 #### **Prerequisite**
 
-- Docker Desktop
+- Docker v.19.03x+
+- Docker Compose
 - Hyperledger Fabric Binaries And Docker Images
-- Node Js v.16+
-- IBM Blockchain Extension
+- Golang v.1.13.x+
+- Node Js v.10.x+
+- npm v.6.x+
+- Visual Studio Code v.1.40+
+- IBM Blockchain Extension v.2.x+
 - Sponge
 - jq
 
