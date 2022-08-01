@@ -1,32 +1,16 @@
 # Shipping Network
 
-To run follow these steps:
+## Prerequisites
+### Installing Basic Dependencies
+Install [Docker Desktop](https://www.docker.com/products/docker-desktop) is a free, easy-to-use, cross-platform, desktop application for Docker.
 
-1. Ensure that you have all of the pre-requisites installed: https://github.com/IBM-Blockchain/microfab#requirements
+To install the basic dependencies such as node, npm, jq, sponge; execute the command
 
-2. Run `docker run -p 8080:8080 -e MICROFAB_CONFIG ibmcom/ibp-microfab`
+    $ ./installDependencies.sh
 
+Once the installation is complete, restart the machine.
 
-```yaml
-export MICROFAB_CONFIG='{
-    "endorsing_organizations":[
-        {
-            "name": "Shipper"
-        },
-        {
-            "name": "Auth1"
-        },
-        {
-            "name": "Auth2"
-        }
-    ],
-    "channels":[
-        {
-            "name": "shipping",
-            "endorsing_organizations":[
-                "Shipper", "Auth1", "Auth2"
-            ]
-        }
-    ]
-}'
-```
+## Starting the network
+Make sure you have installed all the dependencies before following this step, to start the network execute the script
+
+    $ ./startNetwork.sh

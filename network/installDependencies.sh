@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 # Author Justin J Daniel
-# Date: 2020-07-30
+# Date: 2022-07-30
 # Description: Install dependencies for the network
 # Usage: ./installDependencies.sh
 # ----------------------------------------------------------------------------
