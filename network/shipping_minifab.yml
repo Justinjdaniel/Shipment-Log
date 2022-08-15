@@ -11,10 +11,10 @@ fabric:
   # There can be multiple peers for each organizations
   peers: 
   - "peer1.shipper.shipping.com"
-  # - "peer2.shipper.shipping.com"
   - "peer1.auth1.shipping.com"
-  # - "peer2.auth1.shipping.com"
   - "peer1.auth2.shipping.com"
+  # - "peer2.shipper.shipping.com"
+  # - "peer2.auth1.shipping.com"
   # - "peer2.auth2.shipping.com"
 
   # Declaring unique addresses of the orderers.
